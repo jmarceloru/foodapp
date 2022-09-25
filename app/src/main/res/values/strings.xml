@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">foodapp</string>
+    <string name="str_next">Next</string>
+    <string name="str_viewpager_onboarding">viewpager_onboarding</string>
+    <string name="str_image_oboarding">image_onboarding</string>
+    <string name="str_start">Start</string>
+    <string name="str_hi">Hola!</string>
+    <string name="str_email">Email</string>
+    <string name="str_continue">Continuar</string>
+    <string name="str_or">O</string>
+    <string name="str_continue_with_google">Continuar con Google</string>
+    <string name="str_continue_with_facebook">Continuar con Facebook</string>
+    <string name="str_continue_with_twitter">Continuar con Twitter</string>
+    <string name="str_password">Password</string>
+    <string name="str_cancel">Cancelar</string>
+    <string name="str_decline">Rechazar</string>
+    <string name="str_accept">Aceptar</string>
+    <string name="str_register">Registrate</string>
+    <string name="str_ingresar">Ingresar</string>
+    <string name="str_user">Usuario</string>
+    <string name="str_name">Nombre</string>
+    <string name="str_last_name">Apellidos</string>
+    <string name="str_no_account">Aun no tienes una cuenta?</string>
+</resources>

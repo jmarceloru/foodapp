@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "467056291394",
+    "project_id": "foodapp-da059",
+    "storage_bucket": "foodapp-da059.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467056291394:android:f30dbf3856a052b65707db",
+        "android_client_info": {
+          "package_name": "com.jmarcelo.foodapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "467056291394-dvc7qoub6ctk8k6itc6t5g39n6ll2vbd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jmarcelo.foodapp",
+            "certificate_hash": "3f597abdd378600deb0facef4a3980b5091ba9dd"
+          }
+        },
+        {
+          "client_id": "467056291394-o00b8iaese3dmslvtjv8eebo9sphknra.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAaTZNDTjk70MtBl3lod0fLB8EHXyFf6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "467056291394-o00b8iaese3dmslvtjv8eebo9sphknra.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
