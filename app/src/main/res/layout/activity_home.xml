@@ -6,4 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeActivity">
 
+    <TextView
+        android:id="@+id/label_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/margin_large_elements"/>
+
+    <Button
+        android:id="@+id/buton_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_user"
+        android:layout_marginTop="@dimen/margin_large_elements"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

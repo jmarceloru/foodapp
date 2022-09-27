@@ -21,18 +21,15 @@ class RegisterActivity : AppCompatActivity() {
 
         registerViewModel.registerUserSucces.observe(this){
             when{
-                it.success !=null -> Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
+                it.success -> Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
                 it.error.isNotEmpty() -> Toast.makeText(this, it.error, Toast.LENGTH_SHORT).show()
             }
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
 
         binding.buttonRegister.setOnClickListener {
             registerViewModel.registerUser(binding.editEmail.text.toString(),
-            binding.editPassword.text.toString())
+                binding.editPassword.text.toString())
         }
     }
+
 }

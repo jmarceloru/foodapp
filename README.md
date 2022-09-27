@@ -9,4 +9,7 @@ Dependency Injection: Hilt
 Domingo 25/09/2022 
 Login con email y password en Firebase , Login con Google
 
-TAREA: Login con Google acondicionar a arquitectura actual, mostrar usuario logueado en HomeActivity
+TAREA: Login con Google acondicionar a arquitectura actual, mostrar usuario logueado en HomeActivity -- LISTO 26/09/2022
+
+Martes 27/09/2022
+Realizar disenio de Homeactivity y mostarar datos de usuario en Settings

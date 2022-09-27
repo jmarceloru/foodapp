@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class RegisterReporsitory  @Inject constructor(private val registerService: RegisterService)  {
 
-    suspend fun registerFirebaseUser(email:String,password:String):Result<UserData>{
+    suspend fun registerFirebaseUser(email:String,password:String):Result<Boolean>{
         return registerService.registerUser(email,password)
     }
 }

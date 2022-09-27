@@ -11,9 +11,9 @@ import javax.inject.Inject
 
 class RegisterUserFirebaseUseCase @Inject constructor(private val registerReporsitory: RegisterReporsitory) {
 
-     suspend operator fun invoke(email:String, password:String):Result<UserDomain>{
+     suspend operator fun invoke(email:String, password:String):Result<Boolean>{
          val emailPattern = Patterns.EMAIL_ADDRESS
-         val result : Result<UserData> = if (emailPattern.matcher(email).matches()){
+         val result : Result<Boolean> = if (emailPattern.matcher(email).matches()){
              if (password.length>5){
                  registerReporsitory.registerFirebaseUser(email,password)
              }else{
@@ -22,6 +22,6 @@ class RegisterUserFirebaseUseCase @Inject constructor(private val registerRepors
          }else{
              Result.failure(Exception("Email Invalido"))
          }
-         return result.map { it.toDomain() }
+         return result
      }
 }

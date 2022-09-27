@@ -1,6 +1,8 @@
 package com.jmarcelo.foodapp.domain.usecase.login
 
 import android.util.Patterns
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.tasks.Task
 import com.jmarcelo.foodapp.data.LoginRepository
 import com.jmarcelo.foodapp.data.remote.login.model.UserData
 import com.jmarcelo.foodapp.data.remote.login.model.toDomain
@@ -10,9 +12,9 @@ import javax.inject.Inject
 
 class AuthenticationUserFirebaseUseCase @Inject constructor(private val loginRepository: LoginRepository){
 
-    suspend operator fun invoke(email:String, password:String):Result<UserDomain>{
+    suspend fun loginEmailWithPasswordFirebase(email:String, password:String):Result<Boolean>{
         val emailPattern = Patterns.EMAIL_ADDRESS
-        val result : Result<UserData> = if (emailPattern.matcher(email).matches()){
+        val result : Result<Boolean> = if (emailPattern.matcher(email).matches()){
             if (password.length>5){
                 loginRepository.authenticationUserFirebase(email,password)
             }else{
@@ -21,6 +23,10 @@ class AuthenticationUserFirebaseUseCase @Inject constructor(private val loginRep
         }else{
             Result.failure(Exception("Email Invalido"))
         }
-        return result.map { it.toDomain() }
+        return result
+    }
+
+    suspend fun loginGoogle(task: Task<GoogleSignInAccount>):Result<Boolean>{
+       return loginRepository.authenticationUserGoogle(task)
     }
 }

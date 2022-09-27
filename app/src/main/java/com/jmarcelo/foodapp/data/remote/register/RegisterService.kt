@@ -7,10 +7,10 @@ import javax.inject.Inject
 
 class RegisterService @Inject constructor(private val auth: FirebaseAuth) {
 
-    suspend fun registerUser(email:String,password:String):Result<UserData>{
+    suspend fun registerUser(email:String,password:String):Result<Boolean>{
         return try {
             val task = auth.createUserWithEmailAndPassword(email,password).await()
-            Result.success(UserData(email,password))
+            Result.success(true)
         }catch (ex:Exception){
             Result.failure(ex)
         }
