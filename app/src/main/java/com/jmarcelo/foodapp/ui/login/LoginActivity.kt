@@ -45,15 +45,11 @@ class LoginActivity : AppCompatActivity() {
         progressDialogCustom = ProgressDialogCustom(this)
 
         loginViewModel.authSuccesfull.observe(this){
+            if (it.loadingProgressBar) progressDialogCustom.showLoadingDialog() else progressDialogCustom.hideLoadingDialog()
             when{
                 it.error.isNotEmpty() -> Toast.makeText(this, "error ${it.error}", Toast.LENGTH_SHORT).show()
                 it.success -> startActivity(Intent(this,HomeActivity::class.java))
             }
-        }
-
-        loginViewModel.loading.observe(this){
-         //   binding.progressbar.visibility = if (it) View.VISIBLE else View.GONE
-            if (it) progressDialogCustom.showLoadingDialog() else progressDialogCustom.hideLoadingDialog()
         }
 
         binding.buttonLogin.setOnClickListener {

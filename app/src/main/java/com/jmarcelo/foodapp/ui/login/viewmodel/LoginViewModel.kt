@@ -19,33 +19,26 @@ class LoginViewModel @Inject constructor(
     private var _authSuccesfull = MutableLiveData(LoginUiState())
     val authSuccesfull: LiveData<LoginUiState> get() = _authSuccesfull
 
-    private var _loading = MutableLiveData<Boolean>()
-    val loading: LiveData<Boolean> get() = _loading
-
     fun authUser(email: String, password: String) {
         viewModelScope.launch {
-            _loading.value = true
+            _authSuccesfull.value = LoginUiState(loadingProgressBar = true)
             val userDomain = autehenticationUserFirebase.loginEmailWithPasswordFirebase(email, password)
             userDomain.onSuccess {
-                _authSuccesfull.value = LoginUiState(success = it)
-                _loading.value = false
+                _authSuccesfull.value = LoginUiState(success = it, loadingProgressBar = false)
             }.onFailure {
-                _authSuccesfull.value = LoginUiState(error = it.message.orEmpty())
-                _loading.value = false
+                _authSuccesfull.value = LoginUiState(error = it.message.orEmpty(), loadingProgressBar = false)
             }
         }
     }
 
     fun authUserGoogle(task: Task<GoogleSignInAccount>){
         viewModelScope.launch {
-            _loading.value = true
+            _authSuccesfull.value = LoginUiState(loadingProgressBar = true)
             val userFirebase = autehenticationUserFirebase.loginGoogle(task)
             userFirebase.onSuccess {
-                _authSuccesfull.value = LoginUiState(success = it)
-                _loading.value = false
+                _authSuccesfull.value = LoginUiState(success = it, loadingProgressBar = false)
             }.onFailure {
-                _authSuccesfull.value = LoginUiState(error = it.message.orEmpty())
-                _loading.value = false
+                _authSuccesfull.value = LoginUiState(error = it.message.orEmpty(), loadingProgressBar = false)
             }
         }
     }

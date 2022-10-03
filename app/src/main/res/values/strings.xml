@@ -21,4 +21,6 @@
     <string name="str_name">Nombre</string>
     <string name="str_last_name">Apellidos</string>
     <string name="str_no_account">Aun no tienes una cuenta?</string>
+    <string name="str_phone">Telefono</string>
+    <string name="str_address">Direccion</string>
 </resources>

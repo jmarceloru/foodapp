@@ -5,6 +5,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.jmarcelo.foodapp.R
 import dagger.Module
 import dagger.Provides
@@ -21,6 +22,12 @@ object FirebaseModule {
     @Provides
     fun providerFirebaseAuth():FirebaseAuth{
         return FirebaseAuth.getInstance()
+    }
+
+    @Singleton
+    @Provides
+    fun providerFirebaseFirestore():FirebaseFirestore{
+        return FirebaseFirestore.getInstance()
     }
 
     @Singleton
